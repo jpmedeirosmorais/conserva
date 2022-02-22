@@ -1,10 +1,22 @@
+import Link from "next/link";
 import { ReactElement } from "react";
-import { DatabaseProvider } from "./useDatabase";
+import { FirebaseProvider } from "./useDatabase";
 
 interface AppProviderProps {
   children: ReactElement;
 }
 
 export function AppProvider({ children }: AppProviderProps) {
-  return <DatabaseProvider>{children}</DatabaseProvider>;
-};
+  return (
+    <FirebaseProvider>
+      <>
+        <h1>
+          <Link href="/">Home </Link>
+          <Link href="/admin">Dashboard </Link>
+          <Link href="/admin/criar">Criar </Link>
+        </h1>
+        {children}
+      </>
+    </FirebaseProvider>
+  );
+}
