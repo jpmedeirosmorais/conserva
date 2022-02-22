@@ -71,19 +71,26 @@ const Admin: FC = () => {
             ) {
               alert("Preencha todos os campos");
             } else {
-              try {
-                await handleAddNewProduct({
-                  flavor: flavour,
-                  description: description,
-                  price: price,
-                  type: type,
-                  id: uuid(),
-                  imageUrl: imageUrl,
-                });
+              try{
+              await handleAddNewProduct({
+                flavor: flavour,
+                description: description,
+                price: price,
+                type: type,
+                id: uuid(),
+                imageUrl: imageUrl,
+              });
                 alert("Produto adicionado com sucesso");
-              } catch (e) {
+                setFlavour("");
+                setDescription("");
+                setPrice("");
+                setType("");
+                setImageUrl("");
+            } catch(e) {
                 alert(e);
-              }
+            }
+
+
             }
           }}
         >
