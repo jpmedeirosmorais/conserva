@@ -1,2 +1,2 @@
-export { useDatabase } from './useDatabase';
+export { useFirebase } from './useDatabase';
 export { AppProvider } from './AppProvider';

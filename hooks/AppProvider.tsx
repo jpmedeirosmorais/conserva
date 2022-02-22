@@ -1,10 +1,10 @@
 import { ReactElement } from "react";
-import { DatabaseProvider } from "./useDatabase";
+import { FirebaseProvider } from "./useDatabase";
 
 interface AppProviderProps {
   children: ReactElement;
 }
 
 export function AppProvider({ children }: AppProviderProps) {
-  return <DatabaseProvider>{children}</DatabaseProvider>;
+  return <FirebaseProvider>{children}</FirebaseProvider>;
 };
