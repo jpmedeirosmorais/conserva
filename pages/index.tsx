@@ -11,7 +11,6 @@ const Home: FC = () => {
 
   const dataLength = Object.keys(data).map(() => {});
 
-  console.log(dataLength.length);
 
   return (
     <>
