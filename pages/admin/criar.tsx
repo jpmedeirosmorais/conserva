@@ -1,17 +1,19 @@
 import { FC, useState } from "react";
-import { useFirebase } from "../../hooks";
+import { useFirebase } from "../../hooks/useDatabase";
+import { v4 as uuid } from "uuid";
 
-const Update: FC = () => {
-  const { handleUpDateProduct, keyProduct } = useFirebase();
-  const [flavor, setFlavor] = useState("");
+const Admin: FC = () => {
+  const { handleAddNewProduct } = useFirebase();
+  const [flavour, setFlavour] = useState("");
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [price, setPrice] = useState("");
   const [type, setType] = useState("");
 
   return (
-    <>
-      <h1>Update Page</h1>
+    <div>
+      <h1>Admin</h1>
+
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -21,13 +23,15 @@ const Update: FC = () => {
         <input
           type="text"
           name="sabor"
+          value={flavour}
           required
-          onChange={(event) => setFlavor(event.target.value)}
+          onChange={(event) => setFlavour(event.target.value)}
         />
         <label> Descrição: </label>
         <input
           type="text"
           name="descricao"
+          value={description}
           required
           onChange={(event) => setDescription(event.target.value)}
         />
@@ -35,6 +39,7 @@ const Update: FC = () => {
         <input
           type="text"
           name="preco"
+          value={price}
           required
           onChange={(event) => setPrice(event.target.value)}
         />
@@ -42,6 +47,7 @@ const Update: FC = () => {
         <input
           type="text"
           name="tipo"
+          value={type}
           required
           onChange={(event) => setType(event.target.value)}
         />
@@ -49,6 +55,7 @@ const Update: FC = () => {
         <input
           type="text"
           name="imagem"
+          value={imageUrl}
           required
           onChange={(event) => setImageUrl(event.target.value)}
         />
@@ -56,7 +63,7 @@ const Update: FC = () => {
           type="submit"
           onClick={async () => {
             if (
-              flavor === "" ||
+              flavour === "" ||
               description === "" ||
               price === "" ||
               type === "" ||
@@ -64,29 +71,32 @@ const Update: FC = () => {
             ) {
               alert("Preencha todos os campos");
             } else {
-              const newProduct = {
-                id: keyProduct,
-                flavor: flavor,
-                price: price,
-                description: description,
-                type: type,
-                imageUrl: imageUrl,
-              };
-
-              handleUpDateProduct(newProduct, keyProduct);
-              setFlavor("");
-              setDescription("");
-              setPrice("");
-              setType("");
-              setImageUrl("");
+              try {
+                await handleAddNewProduct({
+                  flavor: flavour,
+                  description: description,
+                  price: price,
+                  type: type,
+                  id: uuid(),
+                  imageUrl: imageUrl,
+                });
+                alert("Produto adicionado com sucesso");
+                setFlavour("");
+                setDescription("");
+                setPrice("");
+                setType("");
+                setImageUrl("");
+              } catch (e) {
+                alert(e);
+              }
             }
           }}
         >
           Adicionar
         </button>
       </form>
-    </>
+    </div>
   );
 };
 
-export default Update;
+export default Admin;

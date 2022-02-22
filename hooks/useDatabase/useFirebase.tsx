@@ -13,7 +13,7 @@ const FirebaseContext = createContext({} as FirebaseContextType);
 
 const FirebaseProvider = ({ children }: FirebaseProviderProps) => {
   const [data, setData] = useState([] as any);
-  const [actualProduct, setActualProduct] = useState({} as Product);
+  const [keyProduct, setKeyProduct] = useState("");
 
   const handleGetDatabase = useCallback(() => {
     get(child(dbRef, `produtos/foods`))
@@ -22,7 +22,7 @@ const FirebaseProvider = ({ children }: FirebaseProviderProps) => {
           const dataToSet = snapshot.val();
           setData(dataToSet);
         } else {
-          alert("No data available");
+          console.log("No data");
         }
       })
       .catch((error) => {
@@ -39,17 +39,20 @@ const FirebaseProvider = ({ children }: FirebaseProviderProps) => {
       price: product.price,
       type: product.type,
       id: product.id,
-    }).then((res) => {
-      console.log("Produto adicionado com sucesso!");
-    }).catch((err) => {
-      alert("Erro ao adicionar novo produto: " + err.message);
-    });
+    })
+      .then(() => {
+        alert("Produto adicionado com sucesso!");
+        window.location.reload();
+      })
+      .catch((err) => {
+        alert("Erro ao adicionar novo produto: " + err.message);
+      });
   }
 
-  function handleUpDateProduct(newProduct: Product, oldProduct: Product) {
+  function handleUpDateProduct(newProduct, keyProduct) {
     const db = getDatabase();
 
-    update(ref(db, "produtos/foods/" + oldProduct.flavor + "-" + oldProduct.id ), {
+    update(ref(db, "produtos/foods/" + keyProduct), {
       flavor: newProduct.flavor,
       description: newProduct.description,
       image: newProduct.imageUrl,
@@ -59,6 +62,7 @@ const FirebaseProvider = ({ children }: FirebaseProviderProps) => {
     })
       .then(() => {
         alert("Produto atualizado com sucesso!");
+        window.location.replace("/admin");
       })
       .catch((err) => {
         alert("Erro ao atualizar produto: " + err.message);
@@ -68,16 +72,27 @@ const FirebaseProvider = ({ children }: FirebaseProviderProps) => {
   function handleDeleteProduct(handleKey) {
     const db = getDatabase();
 
-    remove(ref(db, "produtos/foods/" + handleKey)).then(() => {
-      alert("Deletado com sucesso!");
-    }).catch((err) => {
-      alert("Erro ao deletar produto: " + err.message);
-    })
+    remove(ref(db, "produtos/foods/" + handleKey))
+      .then(() => {
+        alert("Deletado com sucesso!");
+        window.location.reload();
+      })
+      .catch((err) => {
+        alert("Erro ao deletar produto: " + err.message);
+      });
   }
 
   return (
     <FirebaseContext.Provider
-      value={{ data, actualProduct, setActualProduct, handleGetDatabase, handleAddNewProduct, handleUpDateProduct,handleDeleteProduct }}
+      value={{
+        data,
+        keyProduct,
+        setKeyProduct,
+        handleGetDatabase,
+        handleAddNewProduct,
+        handleUpDateProduct,
+        handleDeleteProduct,
+      }}
     >
       {children}
     </FirebaseContext.Provider>

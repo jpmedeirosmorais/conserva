@@ -3,10 +3,10 @@ import { Dispatch, ReactElement, SetStateAction } from "react";
 export interface FirebaseContextType {
   handleDeleteProduct: (handleKey: string) => void;
   handleAddNewProduct: (product: Product) => void;
-  handleUpDateProduct: (newProduct: Product, oldProduct: Product) => void;
+  handleUpDateProduct: (newProduct: Product, keyProduct: string) => void;
   handleGetDatabase: () => void;
-  setActualProduct: Dispatch<SetStateAction<Product>>;
-  actualProduct: Product;
+  setKeyProduct: Dispatch<SetStateAction<string>>;
+  keyProduct: string;
   data: Array<any>;
 }
 
