@@ -11,7 +11,6 @@ const Home: FC = () => {
 
   const dataLength = Object.keys(data).map(() => {});
 
-
   return (
     <>
       <h1> Página para teste de providers e integração com o Firebase</h1>
@@ -21,7 +20,13 @@ const Home: FC = () => {
         {dataLength.length > 0 ? (
           Object.keys(data).map((key) => (
             <Card key={data[key].id} className="card">
-              <img src={data[key].image} alt={data[key].image} width={100} height={100} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={data[key].image}
+                alt={data[key].image}
+                width={100}
+                height={100}
+              />
               <h1>{data[key].type}</h1>
               <h3>{data[key].flavor}</h3>
               <p>{data[key].description}</p>
