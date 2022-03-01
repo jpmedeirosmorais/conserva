@@ -13,5 +13,5 @@ const Template: ComponentStory<typeof Type> = (args) => <Type {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  type: "Pizza",
+  type: "PIZZA",
 };

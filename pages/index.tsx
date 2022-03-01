@@ -1,6 +1,5 @@
 import { FC, useEffect } from "react";
 import { useFirebase } from "../hooks/useDatabase";
-import { Card } from "../common/styles/hometests";
 
 const Home: FC = () => {
   const { handleGetDatabase, data } = useFirebase();
@@ -19,7 +18,7 @@ const Home: FC = () => {
       >
         {dataLength.length > 0 ? (
           Object.keys(data).map((key) => (
-            <Card key={data[key].id} className="card">
+            <div key={data[key].id} className="card">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={data[key].image}
@@ -31,7 +30,7 @@ const Home: FC = () => {
               <h3>{data[key].flavor}</h3>
               <p>{data[key].description}</p>
               <h2>{data[key].price}</h2>
-            </Card>
+            </div>
           ))
         ) : (
           <div>

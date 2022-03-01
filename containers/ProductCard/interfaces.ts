@@ -1,5 +1,5 @@
 export interface ProductCardProps {
-  products: Product[];
+  product: Product;
 }
 
 interface Product {

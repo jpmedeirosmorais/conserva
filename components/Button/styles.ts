@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Content = styled.div`
-  font-family: "Roboto", sans-serif;
   height: 4.4rem;
   width: 12.5rem;
   background-color: #11827e;
