@@ -1,1 +1,3 @@
-export interface ButtonProps {}
+export interface ButtonProps {
+    label: string;
+}

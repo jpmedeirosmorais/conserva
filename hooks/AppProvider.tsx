@@ -12,8 +12,6 @@ export function AppProvider({ children }: AppProviderProps) {
       <>
         <h1>
           <Link href="/">Home </Link>
-          <Link href="/admin">Dashboard </Link>
-          <Link href="/admin/criar">Criar </Link>
         </h1>
         {children}
       </>
