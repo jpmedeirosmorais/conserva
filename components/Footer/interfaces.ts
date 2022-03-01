@@ -1,9 +1,11 @@
-export interface FooterProps{
-    medias: Media[];
-};
+import { Component } from "react";
 
-interface Media{
-    name: string;
-    link: string;
-    icon: string;
+export interface FooterProps {
+  medias: Media[];
+}
+
+interface Media {
+  name: string;
+  link: string;
+  icon: Component;
 }

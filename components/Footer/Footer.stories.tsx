@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Footer } from "./Footer";
+import { IconFacebook, IconInstagram } from "../../common/assets/icons";
 
 export default {
   title: "components/Footer",
@@ -16,18 +17,13 @@ Default.args = {
   medias: [
     {
       name: "F",
-      icon: "../../common/assets/icons/facebook",
+      icon: <IconFacebook />,
       link: "https://facebook.com",
     },
     {
       name: "I",
-      icon: "/static/images/instagram.svg",
+      icon: <IconInstagram />,
       link: "https://instagram.com",
-    },
-    {
-      name: "T",
-      icon: "/static/images/twitter.svg",
-      link: "https://twitter.com",
     },
   ],
 };
