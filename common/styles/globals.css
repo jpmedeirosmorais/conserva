@@ -1,30 +1,46 @@
-html,
-body {
-  padding: 0;
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
-html{
+html {
   font-size: 62.5%;
 }
 
-body{
-  font-size: 14px;
+body {
+  font-size: 1.4rem;
   font-size: 1.4rem;
 }
 
-h1{
-  font-size: 2.5rem;
+h1 {
+  font-size: 2.4rem;
+  font-size: 2.4rem;
 }
 
+ul,
+li {
+  list-style: none;
+}
+input {
+  font-family: inherit;
+}
+textarea {
+  resize: none;
+}
 
 a {
   color: inherit;
-  text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+#EZDrawer__overlay {
+  background: #70707033 0% 0% no-repeat padding-box !important;
+  opacity: 1 !important;
+  backdrop-filter: blur(0.2rem) !important;
+  -webkit-backdrop-filter: blur(0.2rem) !important;
+}
+
+.ReactModal__Content .ReactModal__Content--after-open {
+  border-radius: 2rem !important;
 }
