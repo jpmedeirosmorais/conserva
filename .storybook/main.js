@@ -1,4 +1,3 @@
-import "../common/styles/global.css";
 
 module.exports = {
   "stories": [
