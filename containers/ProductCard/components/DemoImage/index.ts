@@ -1,0 +1,1 @@
+export { DemoImage } from "./DemoImage";
