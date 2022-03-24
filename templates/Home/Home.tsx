@@ -6,7 +6,7 @@ export const Home = ({products}: HomeProps) => {
     return (
         <S.Container>
             {products.map(product => (
-                <ProductCard key={product.id} {...product} />
+                <ProductCard key={product.id} product={product} />
             ))}
         </S.Container>
     );
