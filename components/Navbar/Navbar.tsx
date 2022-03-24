@@ -8,7 +8,7 @@ export const Navbar = ({ items }: NavbarProps) => (
 
     <S.Items>
       {items.map((item) => (
-        <S.Item key={item} className="item">
+        <S.Item key={item}>
           {item}
         </S.Item>
       ))}
