@@ -8,6 +8,7 @@ export const Content = styled.div`
 
 export const Body = styled.div`
   padding: 2.5rem;
+  background-color: white;
 `;
 
 export const TypeContent = styled.div`
