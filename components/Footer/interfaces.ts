@@ -1,11 +1,11 @@
-import { Component } from "react";
+import { Component, ReactElement } from "react";
 
 export interface FooterProps {
   medias: Media[];
 }
 
-interface Media {
+export interface Media {
   name: string;
   link: string;
-  icon: Component;
+  icon: ReactElement;
 }

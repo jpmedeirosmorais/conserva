@@ -5,7 +5,7 @@ import * as S from "./styles";
 
 const content = {
   title: "Produtos",
-  subTitle: "Compotas, geléias e pimentas",
+  subtitle: "Compotas, geléias e pimentas",
   details: ""
 }
 

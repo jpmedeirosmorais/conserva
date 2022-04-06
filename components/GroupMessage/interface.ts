@@ -1,7 +1,7 @@
 export interface GroupMessageProps {
     content: {
         title: string;
-        subTitle: string;
+        subtitle: string;
         details: string;
     }
 

@@ -1,5 +1,5 @@
 import { FC, useEffect } from "react";
-import { Home, Menu } from "../templates";
+import { Home, Menu, About } from "../templates";
 import { useFirebase } from "../hooks";
 import * as S from "./styles";
 
@@ -20,6 +20,10 @@ const Index: FC = () => {
 
       <S.Section>
         <Menu products={productsToArray} />
+      </S.Section>
+
+      <S.Section>
+        <About />
       </S.Section>
     </S.Page1>
   );

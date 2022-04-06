@@ -22,5 +22,5 @@ export const SubTitle = styled.div`
 
 export const Details = styled.div`
   font-size: 1.4rem;
-  color: #11827e;
+  color: #737373;
 `;
