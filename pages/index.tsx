@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
 import { Home, Menu, About } from "../templates";
 import { useFirebase } from "../hooks";
-import * as S from "./styles";
+import * as S from "../common/styles/index";
 
 const Index: FC = () => {
   const { data, handleGetDatabase } = useFirebase();
