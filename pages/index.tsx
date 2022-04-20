@@ -21,16 +21,9 @@ const Index: FC = () => {
 
   const productsToArray: any[] = Object.values(data);
 
-  const favorites = productsToArray.filter(
-    (product: any) => {
-      console.log(product.favorite);
-
-      return product.favorite
-    }
-  );
-
-  console.log(favorites);
-
+  const favorites = productsToArray.filter((product: any) => {
+    return product.favorite;
+  });
 
   return (
     <S.Page1>

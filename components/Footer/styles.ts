@@ -6,7 +6,8 @@ export const Content = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 7.4rem;
-  padding: 0 19.5rem;
+  padding: 0 8vw;
+
 `;
 
 export const LabelMessage = styled.div`

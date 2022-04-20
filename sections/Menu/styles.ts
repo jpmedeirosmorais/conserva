@@ -15,6 +15,10 @@ export const MessageSection = styled.div`
   font-weight: bold;
   text-align: center;
   color: #11827E;
+
+  @media (max-width: 400px) {
+    font-size: 2rem;
+  }
 `;
 
 export const Products = styled.div`

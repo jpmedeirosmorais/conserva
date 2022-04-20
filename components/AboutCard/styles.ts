@@ -9,6 +9,11 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 400px) {
+    max-width: 90vw;
+    height: auto;
+  }
 `;
 
 export const ProfileImage = styled.div`

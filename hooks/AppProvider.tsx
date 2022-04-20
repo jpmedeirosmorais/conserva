@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ReactElement } from "react";
-import { IconFacebook, IconInstagram } from "../common/assets/icons";
+import { IconFacebook, IconInstagram, IconWhatsapp } from "../common/assets/icons";
 import { Footer, Navbar } from "../components";
 import { FirebaseProvider } from "./useDatabase";
 import { Media } from "../components/Footer/interfaces";
@@ -11,13 +11,13 @@ interface AppProviderProps {
 
 const medias: Media[] = [
   {
-    name: "F",
-    link: "https://facebook.com",
-    icon: <IconFacebook />,
+    name: "W",
+    link: "https://wa.me/5584920009634",
+    icon: <IconWhatsapp />,
   },
   {
     name: "I",
-    link: "https://instagram.com",
+    link: "https://www.instagram.com/conservaemfamilia/",
     icon: <IconInstagram />,
   },
 ];

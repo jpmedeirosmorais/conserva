@@ -8,4 +8,9 @@ export const Content = styled.div`
   font-weight: 400;
   line-height: 2rem;
   letter-spacing: 0.2px;
+
+  @media (max-width: 350px) {
+    width: 85vw;
+    height: auto;
+  }
 `;

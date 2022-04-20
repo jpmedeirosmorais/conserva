@@ -5,4 +5,5 @@ export const Content = styled.div`
     height: 4.8rem;
     font-size: 1.6rem;
     font-weight: 700;
+    
 `

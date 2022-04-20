@@ -8,14 +8,29 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 4.4rem;
+  padding: 0 5vw;
   font-size: 1.8rem;
   font-weight: bold;
+
+  @media (max-width: 400px) {
+    padding: 0 1vw;
+  }
 `;
 
 export const Brand = styled.div`
   :hover {
     cursor: pointer;
+  }
+
+  @media (max-width: 400px) {
+    a {
+      svg {
+        path {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
   }
 `;
 
@@ -26,10 +41,9 @@ export const Items = styled.div`
 export const Item = styled.div`
   margin: 0 1rem;
 
-  a{
+  a {
     text-decoration: none;
   }
-
 
   :hover {
     cursor: pointer;
