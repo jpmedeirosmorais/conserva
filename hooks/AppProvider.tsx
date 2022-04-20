@@ -9,7 +9,7 @@ interface AppProviderProps {
   children: ReactElement;
 }
 
-const medias : Media[] = [
+const medias: Media[] = [
   {
     name: "F",
     link: "https://facebook.com",
@@ -22,7 +22,16 @@ const medias : Media[] = [
   },
 ];
 
-const itemsProps = ["Home", "About", "Contact", "Login"];
+const itemsProps = [
+  {
+    name: "Home",
+    link: "",
+  },
+  {
+    name: "Produtos",
+    link: "produtos",
+  },
+];
 export function AppProvider({ children }: AppProviderProps) {
   return (
     <FirebaseProvider>

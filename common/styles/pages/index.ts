@@ -8,5 +8,8 @@ export const Section = styled.div`
 
 export const Page1 = styled.div`
   background-color: #fcece8;
+`;
 
+export const MenuContainer = styled.div`
+  margin-top: 16rem;
 `;

@@ -25,6 +25,12 @@ export const Items = styled.div`
 
 export const Item = styled.div`
   margin: 0 1rem;
+
+  a{
+    text-decoration: none;
+  }
+
+
   :hover {
     cursor: pointer;
   }

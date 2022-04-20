@@ -1,3 +1,9 @@
 export interface NavbarProps{
-    items: string[];
+    items: NavbarItem[];
+
+}
+
+interface NavbarItem{
+    name: string;
+    link: string;
 }

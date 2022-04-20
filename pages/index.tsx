@@ -1,7 +1,16 @@
 import { FC, useEffect } from "react";
-import { Home, Menu, About } from "../templates";
+import { Home, Menu, About } from "../sections";
 import { useFirebase } from "../hooks";
-import * as S from "../common/styles/index";
+import * as S from "../common/styles/pages/index";
+
+const texts = {
+  header: "ARTESANAL E COM AMOR",
+  content: {
+    title: "Produtos",
+    subtitle: "Compotas, geléias e pimentas",
+    details: "",
+  },
+};
 
 const Index: FC = () => {
   const { data, handleGetDatabase } = useFirebase();
@@ -12,6 +21,17 @@ const Index: FC = () => {
 
   const productsToArray: any[] = Object.values(data);
 
+  const favorites = productsToArray.filter(
+    (product: any) => {
+      console.log(product.favorite);
+
+      return product.favorite
+    }
+  );
+
+  console.log(favorites);
+
+
   return (
     <S.Page1>
       <S.Section>
@@ -19,7 +39,9 @@ const Index: FC = () => {
       </S.Section>
 
       <S.Section>
-        <Menu products={productsToArray} />
+        <S.MenuContainer>
+          <Menu products={favorites} texts={texts} />
+        </S.MenuContainer>
       </S.Section>
 
       <S.Section>

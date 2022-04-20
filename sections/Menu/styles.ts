@@ -9,7 +9,7 @@ export const ProductContainer = styled.div`
 export const Header = styled.div``;
 
 export const MessageSection = styled.div`
-  margin: 16rem 0 8rem 0;
+  margin-bottom: 8rem;
   font-family: 'Neo Sans Pro', sans-serif;
   font-size: 4.8rem;
   font-weight: bold;
